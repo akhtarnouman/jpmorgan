@@ -35,6 +35,7 @@
   			</select>
     		<input type="submit" name="login" class="login login-submit" value="Sign in">
   		</form>
+  		<a href="newemployer.php">Company Registration </a>.<a href="newstudent.php"> Student Registration</a>
 	</div>
 </body>
 </html>
