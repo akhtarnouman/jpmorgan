@@ -66,7 +66,7 @@ else
 <div align="center">
 <table>
 <tr><td ><form action="validate_employers.php" method="post">
-<input type="submit" value="VALIDATING EMPLOYERS">
+<input type="submit" value="VALIDATE EMPLOYERS">
 </form></td><td>
 <form action="add_employer.php" method="post">
 <input type="submit" value="ADD EMPLOYER">

@@ -16,7 +16,7 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <div align="center">
 <div style="height: 500px;  overflow: auto;">
 <table id="rounded-corner" summary="Companies Details" >
-    <thead>
+<thead>
 <?php
 $employer_id=$_GET['id'];
 $query="select role,salary,locality,working_hours,transport_facilities,incentives,accomodation from job where employer_id='".$employer_id."'";
@@ -53,8 +53,8 @@ else
 			}
 		$row=mysqli_fetch_array($result);
 		}
-	print "</tbody></table> </div></div>";
-	print"<button onclick=\"location.href ='eligible_students.php?id=".$employer_id."';\" class=\"c\">FIND ELIGIBLE STUDENTS</button>";
+	print "</tbody></table> </div>";
+	print"<button onclick=\"location.href ='eligible_students.php?id=".$employer_id."';\" class=\"c\">FIND ELIGIBLE STUDENTS</button></div>";
 }
 ?>
 </body>
