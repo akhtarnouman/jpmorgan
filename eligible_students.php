@@ -54,7 +54,7 @@ else
 		$row=mysqli_fetch_array($result);
 		}
 	print "</tbody></table> </div></div>";
-	print"<button onclick=\"location.href ='eligible_students.php?id=".$employer_id."';\" class=\"c\">FIND ELIGIBLE STUDENTS</button>";
+	print"<button onclick=\"location.href ='eligible_students.php?id=".$employer_id."';\" class=\"c\">NOTIFY ALL THE STUDENTS</button>";
 }
 ?>
 </body>
