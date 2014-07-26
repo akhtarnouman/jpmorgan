@@ -11,16 +11,29 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <link href="poll.css" rel="stylesheet" type="text/css" />
 <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-
-
 <body>
 <div align="center">
 <div style="height: 500px;  overflow: auto;">
 <table id="rounded-corner" summary="Companies Details" >
     <thead>
-<form action="mark_visibility.php" method="post">
 <?php
-
+if(!empty($_POST['validity']))
+{
+	$visibility=$_POST['validity'];
+	$val=substr($visibility,0,5);
+	if($val=="TRUE ")
+		$bool=1;
+	else if($val=="FALSE") 
+		$bool=0;
+	$eid=substr($visibility,5);
+	$query="UPDATE employer SET validation_status=".$bool." WHERE employer_id='".$eid."';";
+	$result=mysqli_query ($db,$query);
+	if(!$result)
+	{
+		exit("ERROR!!!<br>");
+	}
+	header('Location:employer_profile.php');
+}
 $query="select employer_id,name,type from employer where validation_status=0";
 $result=mysqli_query($db,$query);
 if(!$result)
@@ -36,6 +49,7 @@ if($number_of_rows==0)
 else
 	{
 	$keys=array_keys($row);
+	print"<div align=\"center\"><h2 class=\"f\"> LIST OF COMPANIES FOR VALIDATION</h2></div>";
 	for($i=0;$i<$number_of_columns;$i++)
 			{
 			if($i==0)continue; 
@@ -56,10 +70,10 @@ else
 			else
 				print "<td>".$value."</td>";
 			}
-		print "<td>YES &nbsp <input type=\"radio\" name=\"validity\" value=\"TRUE ".$values[1]."\" required> &nbsp&nbsp NO &nbsp<input type=\"radio\" name=\"validity\" value=\"FALSE".$values[1]."\" required> <input type=\"submit\" style=\"	font-size:12px;margin-top: 5px;padding: 5px 5px;\" value=\"VALIDATE\"></td></tr>";
+		print "<td><form method=\"post\" action=\"\">YES &nbsp <input type=\"radio\" name=\"validity\" value=\"TRUE ".$values[1]."\" required> &nbsp&nbsp NO &nbsp<input type=\"radio\" name=\"validity\" value=\"FALSE".$values[1]."\" required> <input type=\"submit\" style=\"	font-size:12px;margin-top: 5px;padding: 5px 5px;\" value=\"VALIDATE\"></form></td></tr>";
 		$row=mysqli_fetch_array($result);
 		}
-	print "</tbody></table> </div></div></form>";
+	print "</tbody></table> </div></div>";
 	}
 ?>
 <div align="center">

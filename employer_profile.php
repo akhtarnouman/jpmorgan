@@ -1,5 +1,4 @@
 <?php session_start();
-//require_once 'auth_check.php';
 require_once 'dbcon.php';
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>

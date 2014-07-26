@@ -1,5 +1,4 @@
 <?php session_start();
-//require_once 'auth_check.php';
 require_once 'dbcon.php';
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
@@ -18,7 +17,6 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <div style="height: 500px;  overflow: auto;">
 <table id="rounded-corner" summary="Companies Details" >
     <thead>
-<form action="mark_visibility.php" method="post">
 <?php
 $employer_id=$_GET['id'];
 $query="select role from job where employer_id='".$employer_id."'";
@@ -58,8 +56,9 @@ else
 			}
 		$row=mysqli_fetch_array($result);
 		}
-	print "</tbody></table> </div></div></form>";
+	print "</tbody></table> </div></div>";
 	}
  ?>
-</body>
+</form>
+ </body>
 </html>
