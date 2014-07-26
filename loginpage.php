@@ -8,7 +8,7 @@
 	<div id="header">
 		<div>
 			<div id="logo">
-				<a href="loginpage.php">Quest Alliance</a>
+				<a href="#">Quest Alliance</a>
 			</div>
 			<div id="navigation">
 				<ul>

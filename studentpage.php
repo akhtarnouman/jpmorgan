@@ -11,11 +11,16 @@
 	<div id="header">
 		<div>
 			<div id="logo">
-				<a href="loginpage.php">Quest Alliance</a>
-			</div>			
+				<a href="#">Quest Alliance</a>
+			</div>
+			<div id="navigation">
+                <ul>
+                    <li>
+                        <a href="logout.php">Log out</a>
+                    </li>
+                </ul>
+            </div>			
 		</div>
-	</div>
-	<div class="notification">
 	</div>
 
 	<div class="studentpage">
@@ -37,7 +42,7 @@
           	<tr>
             	<th>Course</th>
             	<th>Year</th>
-            	<th>Student/College</th>
+            	<th>School/College</th>
             	<th>Board</th>
             	<th>Percentage</th>
           	</tr>";
@@ -97,9 +102,26 @@
        		echo $a[$i]."<br/>";
        		$i+=1;
        	}
-       	echo "<br/></p>";
-        
+       	echo "<br/></p>";        
 	?>
+	<form action="#">
+		<input type="submit" class="button button-submit" value="Update profile">
+	</form>
+	</div>
+
+	<div class="notification">
+		<span id="head">NOTIFICATION</span><br/><hr>
+		<?php
+		$result1 = mysqli_query($con,"SELECT * FROM job");
+		$row1 = mysqli_fetch_array($result1);
+		if(!$row1)
+		{
+			echo "<p>No new notification</p>";
+		}
+		while ($row1 = mysqli_fetch_array($result1)) {
+			echo "<p><b>Role:</b>".$row['role']."<br/>";
+		}
+		?>
 	</div>
 </body>
 </html>
