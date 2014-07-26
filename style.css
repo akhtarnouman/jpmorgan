@@ -1,0 +1,78 @@
+/* ------------------
+ styling for the tables 
+   ------------------   */
+
+table{
+	font-size: 16px;
+	
+}
+
+#rounded-corner
+{
+	font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+	font-size: 20px;
+	margin: 45px;
+	width: auto;
+	border-collapse: collapse;
+
+}
+
+#rounded-corner thead th.rounded-company
+{
+font-size: 22px;
+border: 0px solid #000;
+	background: #008AFF url('table-images/left.png') left -1px no-repeat;
+}
+#rounded-corner thead th.rounded-head
+{
+	font-weight: normal;
+	font-size: 22px;
+	color: #fff;
+	border: 1px solid #000;
+	border-top: 0;
+	background: #008aff;
+}
+#rounded-corner thead th.rounded-q4
+{font-size: 22px;
+	background: #008AFF url('table-images/right.png') right -1px no-repeat;
+	border: 0px solid #000;
+	
+}
+#rounded-corner th
+{
+	padding: 8px;
+	font-weight: normal;
+	font-size: 13px;
+	color: #fff;
+	text-align: center;
+	background: #b9c9fe;
+}
+#rounded-corner td
+{
+
+	border: 1px solid #000;
+	color: #669;
+	text-align: center;
+	padding: 8px 16px;
+
+	
+}
+#rounded-corner tfoot td
+{
+	border: 0px;
+	text-align: center;
+	font-size: 18px;
+	font-family: ;
+	color:#f00;
+}
+
+#rounded-corner tbody tr:hover td
+{
+	background: #d0dafd;
+}
+
+
+
+
+
+

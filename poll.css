@@ -1,0 +1,322 @@
+
+header {
+height: 45px;
+max-height: 45px;
+width: 100%;
+position: relative;
+background-color: #3c404b;
+background: -webkit-linear-gradient(#56585D, #2F3034);
+background: -moz-linear-gradient(#56585D, #2F3034);
+background: linear-gradient(#56585D, #2F3034);
+border-bottom: 1px solid #000;
+}
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700);
+@charset 'UTF-8';
+/* Base Styles */
+button.b{
+    background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 2px;
+	float:right;
+	padding: 12px 20px;
+	 position: fixed;
+    right: 10px;
+    top: 130px;
+}
+button{
+    background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+}
+button.a{
+    background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+	width:316px
+}
+button.c{
+    background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 2px;
+	width:220px
+}
+
+#cssmenu ul,
+#cssmenu li,
+#cssmenu a {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  line-height: 1;
+  font-family: 'Lato', sans-serif;
+}
+#cssmenu {
+	border: 1px solid #064067;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  width: auto;
+}
+
+#cssmenu ul {
+  zoom: 1;
+  background: #1599f1;
+  background: -moz-linear-gradient(top, #1599f1 0%, #0c7cc7 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #1599f1), color-stop(100%, #0c7cc7));
+  background: -webkit-linear-gradient(top, #1599f1 0%, #0c7cc7 100%);
+  background: -o-linear-gradient(top, #1599f1 0%, #0c7cc7 100%);
+  background: -ms-linear-gradient(top, #1599f1 0%, #0c7cc7 100%);
+  background: linear-gradient(top, #1599f1 0%, #0c7cc7 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='@top-color', endColorstr='@bottom-color', GradientType=0);
+  padding: 5px 10px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+}
+#cssmenu ul img{
+float: left; 
+position: relative;
+        width: 511px; 
+        height: 96px;
+}
+#cssmenu ul:before {
+  content: '';
+  display: block;
+}
+#cssmenu ul:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+#cssmenu li {
+margin: 22px 5px 0 0; float: right;
+
+
+  border: 1px solid transparent;
+}
+#cssmenu li span{
+font-size: 1em;
+}
+#cssmenu li a {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  padding: 8px 15px 9px 15px;
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+  border: 1px solid transparent;
+  font-size: 16px;
+}
+#cssmenu li.active {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #1599f1;
+}
+#cssmenu li.active a {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  display: block;
+  background: #095e97;
+  border: 1px solid #064067;
+  -moz-box-shadow: inset 0 5px 10px #064067;
+  -webkit-box-shadow: inset 0 5px 10px #064067;
+  box-shadow: inset 0 5px 10px #064067;
+}
+#cssmenu li:hover {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  border: 1px solid #1599f1;
+}
+#cssmenu li:hover a {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  border-radius: 5px;
+  display: block;
+  background: #095e97;
+  border: 1px solid #064067;
+  -moz-box-shadow: inset 0 5px 10px #064067;
+  -webkit-box-shadow: inset 0 5px 10px #064067;
+  box-shadow: inset 0 5px 10px #064067;
+}
+
+.f {
+    font-family: "Arial";
+	color: #000000
+}
+
+h3 { margin: 0; }
+
+a {
+	color: #00f;
+	text-decoration: none;
+}
+
+a:hover { color: #f00; }
+
+fieldset {
+	border: none;
+	margin: 0;
+}
+
+input {
+	font-family: inherit;
+	font-size: inherit;
+	margin: 0;
+}
+
+input:focus {
+  outline: none;
+}
+
+input[type="submit"] { cursor: pointer;	background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px; }
+
+.clearfix { *zoom: 1; }
+.clearfix:before, .clearfix:after {
+	content: "";
+	display: table;	
+}
+.clearfix:after { clear: both; }
+
+#login-form {
+	margin: 50px auto;
+	width: 300px;
+}
+
+#login-form h3 {
+	background-color: #008AFF;
+	border-radius: 5px 5px 0 0;
+	color: #fff;
+	font-size: 14px;
+	padding: 20px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+#login-form fieldset {
+	background: #F9F9F9;
+	border-radius: 0 0 5px 5px;
+	padding: 20px;
+	position: relative;
+}
+
+#login-form fieldset:before {
+	background-color: #1599f1;
+	content: "";
+	height: 8px;
+	left: 50%;
+	margin: -4px 0 0 -4px;
+	position: absolute;
+	top: 0;
+	-webkit-transform: rotate(45deg);
+	-moz-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	-o-transform: rotate(45deg);
+	transform: rotate(45deg);
+	width: 8px;
+}
+
+#login-form input {
+	font-size: 14px;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+	border: 2px solid #cccccc;
+	padding: 12px 10px;
+	width: 238px;
+	margin: 15px 0px 0px 0px;
+}
+
+#login-form input[type="text"] {
+	border-radius: 3px 3px 0 0;
+}
+
+#login-form input[type="password"] {
+	border-radius: 0px 0px 3px 3px;
+}
+
+#login-form input[type="submit"] {
+	background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 20px;
+}
+
+#login-form input[type="submit"]:hover { background: #308AFF; }
+
+#login-form footer {
+	float: left;
+	font-size: 15px;
+	margin-top: 16px;
+	background: #008AFF;
+	border-radius: 3px;
+	color: #fff;
+	float: right;
+	font-weight: bold;
+	margin-top: 20px;
+	padding: 12px 5px;
+}
+
+body {
+	font-family: 'OpenSans';
+	margin: 0;
+}
+
+.info {
+	background: #e5e5e5;
+	border-radius: 50%;
+	display: inline-block;
+	height: 20px;
+	line-height: 20px;
+	margin: 0 10px 0 0;
+	text-align: center;
+	width: 20px;
+}
+
+
+label, li {
+	display: block;
+	padding: 10px;
+	font-size: 2em;
+	color: black;
+}
+
+
+ul { list-style: none; margin-bottom: 15px;}
+
