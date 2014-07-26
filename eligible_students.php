@@ -85,7 +85,7 @@ else
 			{
 			$value=htmlspecialchars($values[2*$j+1]);
 			if($j==0)continue;
-			if($j==1)print "<td><a href=\"student_resume.php?id=".$values[1]."\">".$value."</td>";
+			if($j==1)print "<td><a href=\"student_resume.php?id=".$values[1]."\">".$value."</a></td>";
 			else if($j==4)print "<td>".$value."%</td>";
 			else 	print "<td>".$value."</td>";
 			}
