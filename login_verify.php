@@ -1,6 +1,6 @@
 <?php
   session_start();
-  	$con=mysqli_connect("localhost","root","","questalliance");
+  	$con=mysqli_connect("localhost","root","cfg2014!","questalliance");
 		if (mysqli_connect_errno())
 		{	
   	  		echo "Failed to connect to MySQL: " . mysqli_connect_error();

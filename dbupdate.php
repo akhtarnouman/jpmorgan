@@ -51,7 +51,7 @@ $colname="address";
 break
 }
 */
-mysql_connect("localhost", "root", "")or die();
+mysql_connect("localhost", "root", "cfg2014!")or die();
  mysql_select_db("questalliance") or die();
  $result = mysql_query("UPDATE student SET ".$colname."='".$changedval."' WHERE id= '".$rowval."';") or die();
  //$result = mysql_query("UPDATE student SET strengths='".$changedval."' WHERE id= '".$rowval."';") or die();

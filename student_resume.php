@@ -23,7 +23,7 @@
 	<div class="resumepage">
 	<?php
 		$id=$_GET['id'];
-		$con=mysqli_connect("localhost","root","","questalliance");
+		$con=mysqli_connect("localhost","root","cfg2014!","questalliance");
 		$result = mysqli_query($con,"SELECT * FROM student WHERE id='$id'");
 		$row = mysqli_fetch_array($result);
 		echo "<span id=\"name\">".$row['name']."</span><br/><hr>";

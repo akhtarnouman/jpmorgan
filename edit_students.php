@@ -11,7 +11,7 @@
 <body>
 <div align="center">
 <?php
-mysql_connect("localhost", "root", "")or die();
+mysql_connect("localhost", "root", "cfg2014!")or die();
  mysql_select_db("questalliance") or die();
 $query="SELECT name, mobile, email FROM student WHERE id='1ms11cs121';";
 $result=mysql_query($query);

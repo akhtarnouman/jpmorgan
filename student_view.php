@@ -30,7 +30,7 @@ $(document).ready(function() {
 		</div>
 	</div><br/><br/>
 <?php
-mysql_connect("localhost", "root", "")or die();
+mysql_connect("localhost", "root", "cfg2014!")or die();
  mysql_select_db("questalliance") or die();
   $result = mysql_query("SELECT * FROM student;") or die();
   if(!$result)
