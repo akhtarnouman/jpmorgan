@@ -3,6 +3,7 @@ require_once 'dbcon.php';
 ?>
 <html>
 <head>
+<<<<<<< HEAD
 	<meta charset="UTF-8">
 	<title>Quest Alliance</title>
 	<link rel="stylesheet" href="css/loginpage.css" type="text/css">
@@ -26,6 +27,17 @@ require_once 'dbcon.php';
 	<div class="resumepage">
 <div align="center">
 <h2 class="f">DELETE RECORDS</h2><hr><br/>
+=======
+	<title>
+		QUEST
+	</title>
+<link href="poll.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div align="center">
+<h2 class="f">DELETE RECORDS</h2>
+>>>>>>> origin/master
 </div>
 <form method="post" action="delete2.php">
 <div align="center">
@@ -74,6 +86,7 @@ for($i=0;$i<$number_of_rows;$i++)
 		$row=mysqli_fetch_array($result);
 		}
 	}
+<<<<<<< HEAD
 	print "</table><br/><br/>";
 
 ?>
@@ -81,5 +94,13 @@ for($i=0;$i<$number_of_rows;$i++)
 </div>
 </form>
 </div>
+=======
+	print "</table>";
+
+?>
+<input type="submit" value="DELETE">
+</div>
+</form>
+>>>>>>> origin/master
 </body>
 </html>

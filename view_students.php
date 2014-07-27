@@ -4,6 +4,7 @@ header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <html>
 <head>
+<<<<<<< HEAD
 	<meta charset="UTF-8">
 	<title>Quest Alliance</title>
 	<link rel="stylesheet" href="css/loginpage.css" type="text/css">
@@ -21,6 +22,18 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <div >
 <?php
 $query="SELECT id, name, mobile, email FROM student WHERE 1";
+=======
+	<title>
+		QUEST
+	</title>
+<link href="poll.css" rel="stylesheet" type="text/css" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div align="center">
+<?php
+$query="SELECT name, mobile, email FROM student WHERE 1";
+>>>>>>> origin/master
 $result=mysqli_query($db,$query);
 if(!$result)
 		exit("ERROR!!!");
@@ -58,8 +71,12 @@ for($i=0;$i<$number_of_rows;$i++)
 			{
 			$value=htmlspecialchars($values[2*$j+1]);
 			if($j==0)
+<<<<<<< HEAD
 				print "<td><a href=\"student_resume.php?id=".$values[0]."\">".$value."</a></td>";
 				//echo $values[0];
+=======
+				print "<td><a href=\"student_resume.php?id=".$values[1]."\">".$value."</a></td>";
+>>>>>>> origin/master
 			else
 				print "<td>".$value."</td>";
 			}
