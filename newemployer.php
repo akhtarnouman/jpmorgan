@@ -20,11 +20,11 @@
 		</div>
 	</div>
 	<div class="reg-card">
-	<form action="" method="post">
-	<h1>Employer Registration</h1>
-	<table>
-<tr><td><p>Name:</p></td><td><input type="text" id="fname" required="true"></input></td></tr>
-<tr><td><p>Type:</p></td><td><select id="lname">
+	<form action="newemployerentry.php" method="post">
+	<h1>Employer Registration</h1><hr><br/><br/>
+	<table align="center">
+<tr><td><p>Name:</p></td><td><input type="text" name="name" required="true"></input></td></tr>
+<tr><td><p>Type:</p></td><td><select name="type">
 <option value="">--Select Type--</option>
 <option value="IT">IT</option>
 <option value="Accounting/Finance">Accounting/Finance</option>
@@ -49,12 +49,12 @@
 <option value="Others">Others</option>
 
 </select></td></tr>
-	<tr><td>Employer id:</td><td><input type="text" id="eid" required="true"/></td></tr>
-	<tr><td>Username:</td><td><input type="text" id="uname" required="true"/></td></tr>
-	<tr><td>Password:</td><td><input type="text" id="pswd" required="true"/></td></tr>
-	<tr><td>Confirm Password:</td><td><input type="text" id="cpswd" required="true"/></td></tr>
+	<tr><td>Employer id:</td><td><input type="text" name="eid" required="true"/></td></tr>
+	<tr><td>Username:</td><td><input type="text" name="uname" required="true"/></td></tr>
+	<tr><td>Password:</td><td><input type="password" name="pswd" required="true"/></td></tr>
+	<tr><td>Confirm Password:</td><td><input type="password" name="cpswd" required="true"/></td></tr>
 	</table><br/><br/>
-	<input type="submit" class="button button-submit" value="Add" />
+	<center><input type="submit" class="button button-submit" value="Add" /></center>
 	</form>
 	</div>
 </body>

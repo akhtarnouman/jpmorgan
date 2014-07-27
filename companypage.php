@@ -22,5 +22,12 @@
             </div>			
 		</div>
 	</div>
+	<div class="reg-card">
+	<div align="center">
+	<h1>COMPANY PAGE</h1><hr><br/><br/>
+	<button class="button button-submit" name="create_job" onclick="location.href = 'newjob.php';" class="a">CREATE A JOB</button><br><br>
+	<button class="button button-submit" name="view_history" onclick="location.href = 'view_students.php';" class="a">CANDIDATES LIST</button><br><br>
+	</div>
+	</div>
 </body>
 </html>

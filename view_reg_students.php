@@ -2,11 +2,13 @@
 require_once 'dbcon.php';
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
+
 <html>
 <head>
 	<meta charset="UTF-8">
 	<title>Quest Alliance</title>
 	<link rel="stylesheet" href="css/loginpage.css" type="text/css">
+
 </head>
 <body>
 	<div id="header">
@@ -25,15 +27,22 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 	</div>
 	<div class="resumepage">
     <div align="center">
-    <h2 class="f">LIST OF REGISTERED EMPLOYERS</h2><hr><br/>
+    <h2 class="f">STUDENT LISTING</h2><hr>
     </div>
+<form method="post" action="notify_students.php">
 <div align="center">
 <table id="rounded-corner" summary="Companies Details" >
-    <thead>
-<form action="mark_visibility.php" method="post">
+<thead>
 <?php
+if($_SESSION['c']==0)
+{
+	$employer_id=$_GET['id'];
+	$_SESSION['eid']=$employer_id;$_SESSION['c']=1;
+}
+else
+	$employer_id=$_SESSION['eid'];
 
-$query="select employer_id,name,type from employer where validation_status=1";
+$query="select R.id, S.name,S.mobile,S.email from student AS S, registration AS R WHERE R.id=S.id";
 $result=mysqli_query($db,$query);
 if(!$result)
 	{
@@ -44,44 +53,35 @@ $number_of_rows=mysqli_num_rows($result);
 $number_of_columns=mysqli_num_fields($result);
 
 if($number_of_rows==0)
-	exit("<br><br><div align\"center\"><font size=\"4\" color=\"red\"><b>NO COMPANIES HAVE REGISTERED</b></font><br></div>");
+	exit("<br><br><div align\"center\"><font size=\"4\" color=\"red\"><b>NO STUDENTS REGISTERED</b></font><br></div>");
 else
 	{
 	$keys=array_keys($row);
 	for($i=0;$i<$number_of_columns;$i++)
-			{
-			if($i==0)continue; 
-			print "<th scope=\"col\" class=\"rounded-company\">". strtoupper($keys[2*$i+1])."</th>";
-			}
-			
-	$_SESSION['rows']=$number_of_rows;
+				{if($i==0)continue; print "<th scope=\"col\" class=\"rounded-head\">". strtoupper($keys[2*$i+1])."</th>";}
+	print "<th scope=\"col\" class=\"rounded-head\">SELECT</th>";
 	for($i=0;$i<$number_of_rows;$i++)
 		{
 		print "<tr align=\"center\">";
 		$values=array_values($row);
+		print "<td><input type=\"checkbox\" name=\"selected_students[]\" value=".$values[1]."/></td>";
 		for($j=0;$j<$number_of_columns;$j++)
 			{
 			$value=htmlspecialchars($values[2*$j+1]);
-			if($j==0)continue; 
-			if($j==1)
-				print "<td><a href=\"employer_details.php?id=".$row['employer_id']."\">".strtoupper(str_replace('_',' ',$value))."</td>";
-			else
-				print "<td>".$value."</td>";
+				if($j==0)continue;
+				else if($j==1){$value=strtoupper(str_replace('_',' ',$value));print "<td><a href=\"student_resume.php?id=".$values[1]."\">".$value."</a></td>";}
+				else print "<td>".$value."</td>";
 			}
 		$row=mysqli_fetch_array($result);
 		}
-	print "</tbody></table> </div></form><br/><br/>";
+	print "</tbody></table>";
+
 	}
-?>
-<div align="center">
-<table>
-<tr><td ><form action="validate_employers.php" method="post">
-<input class="button button-submit" type="submit" value="VALIDATE EMPLOYERS">
-</form></td><td>
-<form action="newemployer.php" method="post">
-<input class="button button-submit" type="submit" value="ADD EMPLOYER">
-</form><td></tr></table>
-</div>
+	?>
+	<br/><br/>
+	Message : <textarea name="msg" size="200" placeholder="Enter message" required="true"></textarea><br/><br/>
+	<input class="button button-submit" onclick="" type="submit" value="NOTIFY STUDENTS" name="notify"></div>
+	</form>
 </div>
 </body>
 </html>

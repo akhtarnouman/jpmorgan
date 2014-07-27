@@ -40,7 +40,7 @@ if(!$result)
 $row=mysqli_fetch_array($result);
 $number_of_rows=mysqli_num_rows($result);
 $number_of_columns=mysqli_num_fields($result);
-
+$_SESSION['role']=$row['role'];
 if($number_of_rows==0)
 	exit("<div align\"center\"><font size=\"4\" color=\"red\"><b>JOB SPECIFICATION NOT MENTIONED</b></font><br></div>");
 else
@@ -66,7 +66,8 @@ else
 		$row=mysqli_fetch_array($result);
 		}
 	print "</tbody></table> </div><br/><br/>";
-	print"<div align=\"center\"><button class=\"button button-submit\" onclick=\"location.href ='eligible_students.php?id=".$employer_id."';\" >FIND ELIGIBLE STUDENTS</button></div>";
+	print"<div align=\"center\"><button class=\"button button-submit\" onclick=\"location.href ='eligible_students.php?id=".$employer_id."';\" >FIND ELIGIBLE STUDENTS</button></div><br>";
+	print"<div align=\"center\"><button class=\"button button-submit\" onclick=\"location.href ='view_reg_students.php?id=".$employer_id."';\" >VIEW REGISTERED STUDENTS</button></div>";
 }
 ?>
 </body>

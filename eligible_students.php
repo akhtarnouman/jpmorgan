@@ -8,7 +8,7 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 	<meta charset="UTF-8">
 	<title>Quest Alliance</title>
 	<link rel="stylesheet" href="css/loginpage.css" type="text/css">
-
+	<script src="msgsend.js" type="text/javascript"></script>
 </head>
 <body>
 	<div id="header">
@@ -29,7 +29,7 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
     <div align="center">
     <h2 class="f">STUDENT LISTING</h2><hr>
     </div>
-<form method="post" action="notify_students.php">
+<form name="myForm" onsubmit="return (validate());" method="post" action="notify_students.php">
 <div align="center">
 <table id="rounded-corner" summary="Companies Details" >
 <thead>

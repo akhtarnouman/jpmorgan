@@ -104,9 +104,9 @@
        	}
        	echo "<br/></p>";        
 	?>
-	<form action="#">
+<!--	<form action="#">
 		<input type="submit" class="button button-submit" value="Update profile">
-	</form>
+	</form>-->
 	</div>
 
 	<div class="notification">
@@ -125,7 +125,7 @@
       //echo "<b>Role:</b>".$row1['role']."<br/>";
       echo "<b>Role:</b>";
       $x= $row2['employer_id'];
-      echo "<a href=\"employer_role_criteria.php?id=".$x."\">".$row1['role']."</a><br/>";
+      echo "<a href=\"employer_role_criteria2.php?eid=".$x."\">".$row1['role']."</a><br/>";
 		}while ($row1 = mysqli_fetch_array($result1))
 		?>
 	</div>

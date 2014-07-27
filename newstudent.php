@@ -14,7 +14,7 @@
 	</div>
 	<div class="reg-card">
 	<form action="newstudententry.php" method="post">
-		<h1>Student Enrollment</h1>
+		<h1>Student Enrollment</h1><hr><br/>
 		<h2>Basic Details:</h2>
 		<table cellspacing="2px" cellpadding="5px">
 			<tr><td>Student ID:</td><td><input type="text" name="sid" required="true"></input></td></tr>
@@ -27,6 +27,8 @@
 			<tr><td>Language:</td><td><input type="text" name= "language" required="true"/></td></tr>
 			<tr><td>Address:</td><td><input type="text" name= "address" required="true"/></td></tr>
 			<tr><td>Gender:</td><td><input type="text" name= "gender" required="true"/></td></tr>
+			<tr><td>Username:</td><td><input type="text" name= "uname" required="true"/></td></tr>
+			<tr><td>Password:</td><td><input type="text" name= "pswd" required="true"/></td></tr>
 		</table>
 		<h2>Education Details:</h2>
 		<table cellspacing="2px" cellpadding="5px">

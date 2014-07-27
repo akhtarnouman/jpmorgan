@@ -15,15 +15,12 @@
 					<li class="selected">
 						<a href="loginpage.php">Home</a>
 					</li>
-					<li>
-						<a href="#">About</a>
-					</li>
 				</ul>
 			</div>
 		</div>
 	</div>
 
-	<div class="login-card" align="center">
+	<div class="login-card" >
     	<h1>Log-in</h1><br>
   		<form name="myForm" action="login_verify.php" method="post">
     		<input type="text" name="user" value="" placeholder="Username">
@@ -35,7 +32,7 @@
   			</select>
     		<input type="submit" name="login" class="login login-submit" value="Sign in">
   		</form>
-  		<a href="newemployer.php">Company Registration </a>.<a href="newstudent.php"> Student Registration</a>
+  		<center><a href="newemployer.php">Company Registration</a></center>
 	</div>
 </body>
 </html>

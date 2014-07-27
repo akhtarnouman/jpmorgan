@@ -24,8 +24,9 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
             </div>			
 		</div>
 	</div>
-<div align="center">
-<div style="height: 500px;  overflow: auto;">
+	<div class="reg-card">
+	<div align="center">
+	<h1>COMPANY NAME</h1><hr><br/>
 <table id="rounded-corner" summary="Companies Details" >
     <thead>
 <?php
@@ -97,5 +98,6 @@ else
 <input type="submit" value="ADD EMPLOYER">
 </form><td></tr></table>
 </div>
+
 </body>
 </html>

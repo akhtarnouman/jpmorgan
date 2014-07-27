@@ -1,6 +1,7 @@
 <?php
 	session_start();
-	echo $_SESSION['eid'];
+	$eid=$_SESSION['eid'];
+	$role=$_SESSION['role'];
 	$temp=$_POST['selected_students'];
 	$count=count($temp);
 	for($i=0;$i<$count;$i++)
@@ -9,6 +10,8 @@
 			//echo "<br>".$id."<br>";
 			$con=mysqli_connect("localhost","root","","questalliance");
 			$result = mysqli_query($con,"SELECT * FROM student WHERE id='$id'");
+			print $id." ".$eid." ".$role."<br>";
+			$result2 = mysqli_query($con,"INSERT INTO shortlisted (id,employer_id,role) VALUES('".$id."','".$eid."','".$role."')");
 			$row = mysqli_fetch_array($result);
 			$mno=$row['mobile'];
 			//echo $row['mobile'];
@@ -44,7 +47,7 @@ $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
 curl_close($ch);
  
 print "Response = ".print_r($http_result);
-header('Location: eligible_students.php?selected_students='.$temp);
+//header('Location: eligible_students.php?selected_students='.$temp);
 
 	}
 
