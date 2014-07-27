@@ -141,6 +141,17 @@ body {
   background-color: #F7F7F7;
 }
 
+.resumepage {
+  width: 65%;
+  height: auto;
+  margin: 10px auto;
+  padding: 30px;
+  box-shadow: 0px 2px 20px rgba(0, 0, 0, 0.3);
+  font-size: 18px;
+  font-family: "Fixed", monospace;
+  background-color: #F7F7F7;
+}
+
 #name {
   font-size: 30px;
   padding: 35px 0 35px; 
@@ -183,7 +194,7 @@ a {
   font-family: "Fixed", monospace;
   font-weight: 700;
   height: 36px;
-  width: 200px;
+  width: 220px;
   border-radius: 4px; 
   padding: 0 8px;
 }
@@ -216,4 +227,16 @@ a {
   border: 1px solid #d9d9d9;
   border-top: 1px solid #c0c0c0;
   padding: 0 8px;
+}
+
+textarea {
+  height: 35px;
+  font-size: 16px;
+  width: 500px;
+  font-family: "Andale Mono", monospace;
+  background: #fff;
+  border: 1px solid #d9d9d9;
+  border-top: 1px solid #c0c0c0;
+  padding: 0 8px;
+  vertical-align: middle;
 }

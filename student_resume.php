@@ -1,6 +1,3 @@
-<?php
-	session_start();
-?>
 <html>
 <head>
 	<meta charset="UTF-8">
@@ -23,10 +20,9 @@
 		</div>
 	</div>
 
-	<div class="studentpage">
+	<div class="resumepage">
 	<?php
-		$name=$_SESSION['name'];
-		$id=$_SESSION['id'];
+		$id=$_GET['id'];
 		$con=mysqli_connect("localhost","root","","questalliance");
 		$result = mysqli_query($con,"SELECT * FROM student WHERE id='$id'");
 		$row = mysqli_fetch_array($result);
@@ -104,30 +100,7 @@
        	}
        	echo "<br/></p>";        
 	?>
-	<form action="#">
-		<input type="submit" class="button button-submit" value="Update profile">
-	</form>
 	</div>
 
-	<div class="notification">
-		<span id="head">NOTIFICATION</span><br/><hr>
-		<?php
-		$result1 = mysqli_query($con,"SELECT * FROM job");
-		$row1 = mysqli_fetch_array($result1);
-		if(!$row1)
-		{
-			echo "<p>No new notification</p>";
-		}
-		do {
-      $result2 = mysqli_query($con,"SELECT * FROM employer WHERE `employer_id`='$row1[employer_id]'");
-      $row2 = mysqli_fetch_array($result2);
-			echo "<p><b>Company:</b>".$row2['name']."<br/";
-      //echo "<b>Role:</b>".$row1['role']."<br/>";
-      echo "<b>Role:</b>";
-      $x= $row2['employer_id'];
-      echo "<a href=\"employer_role_criteria.php?id=".$x."\">".$row1['role']."</a><br/>";
-		}while ($row1 = mysqli_fetch_array($result1))
-		?>
-	</div>
 </body>
 </html>

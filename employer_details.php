@@ -4,17 +4,30 @@ header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <html>
 <head>
-	<title>
-		QUEST
-	</title>
-<link href="poll.css" rel="stylesheet" type="text/css" />
-<link href="style.css" rel="stylesheet" type="text/css" />
+	<meta charset="UTF-8">
+	<title>Quest Alliance</title>
+	<link rel="stylesheet" href="css/loginpage.css" type="text/css">
 </head>
-
-
 <body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="#">Quest Alliance</a>
+			</div>
+			<div id="navigation">
+                <ul>
+                    <li>
+                        <a href="logout.php">Log out</a>
+                    </li>
+                </ul>
+            </div>			
+		</div>
+	</div>
+	<div class="resumepage">
+    <div align="center">
+    <h2 class="f">COMPANIES DETAILS</h2><hr><br/>
+    </div>
 <div align="center">
-<div style="height: 500px;  overflow: auto;">
 <table id="rounded-corner" summary="Companies Details" >
     <thead>
 <?php
@@ -56,7 +69,7 @@ else
 			}
 		$row=mysqli_fetch_array($result);
 		}
-	print "</tbody></table> </div></div>";
+	print "</tbody></table><br/><br/> </div></div>";
 	}
  ?>
 </form>

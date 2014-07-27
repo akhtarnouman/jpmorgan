@@ -2,22 +2,43 @@
 require_once 'dbcon.php';
 header('Cache-Control: no-cache, must-revalidate');
 header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
+
 <html>
 <head>
-	<title>
-		QUEST
-	</title>
-<link href="poll.css" rel="stylesheet" type="text/css" />
-<link href="style.css" rel="stylesheet" type="text/css" />
+	<meta charset="UTF-8">
+	<title>Quest Alliance</title>
+	<link rel="stylesheet" href="css/loginpage.css" type="text/css">
+
 </head>
 <body>
+	<div id="header">
+		<div>
+			<div id="logo">
+				<a href="#">Quest Alliance</a>
+			</div>
+			<div id="navigation">
+                <ul>
+                    <li>
+                        <a href="logout.php">Log out</a>
+                    </li>
+                </ul>
+            </div>			
+		</div>
+	</div>
+	<div class="resumepage">
+    <div align="center">
+    <h2 class="f">STUDENT LISTING</h2><hr>
+    </div>
 <form method="post" action="notify_students.php">
 <div align="center">
 <table id="rounded-corner" summary="Companies Details" >
 <thead>
 <?php
-$employer_id=$_GET['id'];
-$_SESSION['eid']=$employer_id;
+if($_SESSION['c']==0)
+{$employer_id=$_GET['id'];
+$_SESSION['eid']=$employer_id;$_SESSION['c']=1;}
+else
+	$employer_id=$_SESSION['eid'];
 $query="select employer_id, role, salary, locality, working_hours, transport_facilities, incentives, accomodation from job where employer_id='".$employer_id."'";
 $query2="select id, role, salary, locality, working_hours, transport_facilities, incentives, accomodation from student_pref where 1";
 $query4="";
@@ -32,7 +53,7 @@ $criterias=array_values($row);
 $number_of_rows=mysqli_num_rows($result2);
 $number_of_columns=mysqli_num_fields($result2);
 $row2=mysqli_fetch_array($result2);
-print"<div align=\"center\"><h2 class=\"f\">STUDENTS LISTING<br>role- '".$row['role']."' at (".$employer_id.")</h2></div>";
+print"<div align=\"center\"><h2>Role - '".$row['role']."' at (".$employer_id.")</h2></div>";
 	for($i=0;$i<$number_of_rows;$i++)
 		{
 		$values=array_values($row2);
@@ -85,7 +106,7 @@ else
 			{
 			$value=htmlspecialchars($values[2*$j+1]);
 			if($j==0)continue;
-			if($j==1)print "<td><a href=\"student_resume.php?id=".$values[1]."\">".$value."</td>";
+			if($j==1)print "<td><a href=\"student_resume.php?id=".$values[1]."\">".$value."</a></td>";
 			else if($j==4)print "<td>".$value."%</td>";
 			else 	print "<td>".$value."</td>";
 			}
@@ -93,8 +114,11 @@ else
 		}
 	}
 	print "</tbody></table> ";
-	print"<input type=\"submit\" value=\"NOTIFY SELECTED STUDENTS\" name=\"notify\"></div></form>";
-?>
+	?>
+	<br/><br/>
+	Message : <textarea name="msg" size="200" placeholder="Enter message" required="true"></textarea><br/><br/>
+	<input class="button button-submit" onclick="" type="submit" value="NOTIFY STUDENTS" name="notify"></div>
+	</form>
 </div>
 </body>
 </html>
