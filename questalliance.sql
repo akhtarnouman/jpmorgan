@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.0.4
 -- http://www.phpmyadmin.net
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 27, 2014 at 05:00 AM
--- Server version: 5.6.16
--- PHP Version: 5.5.11
+-- Host: localhost
+-- Generation Time: Jul 27, 2014 at 05:21 AM
+-- Server version: 5.6.12-log
+-- PHP Version: 5.4.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `questalliance`
 --
+CREATE DATABASE IF NOT EXISTS `questalliance` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `questalliance`;
 
 -- --------------------------------------------------------
 
@@ -40,6 +42,8 @@ CREATE TABLE IF NOT EXISTS `employer` (
 --
 
 INSERT INTO `employer` (`employer_id`, `password`, `type`, `name`, `validation_status`) VALUES
+('333', '12345', 'IT', 'Shreyas', 1),
+('999', '12345', 'Accounting/Finance', 'meru cab', 0),
 ('ccd', 'z', 'retail', 'Cafe Coffee Day', 1),
 ('mcd', 'z', 'retail', 'Mc Donalds', 1);
 
@@ -90,7 +94,10 @@ CREATE TABLE IF NOT EXISTS `logintable` (
 --
 
 INSERT INTO `logintable` (`uname`, `pswd`, `profiletype`, `id`) VALUES
-('nouman', '12345', 'student', '1ms11cs121');
+('nouman', '12345', 'student', '1ms11cs121'),
+('sid', '12345', 'staff', '111'),
+('shreyas', '12345', 'company', '333'),
+('zxcv', '12345', 'company', '999');
 
 -- --------------------------------------------------------
 
@@ -189,7 +196,7 @@ CREATE TABLE IF NOT EXISTS `student` (
 --
 
 INSERT INTO `student` (`id`, `name`, `email`, `mobile`, `dob`, `nationality`, `languages`, `tenth_pc`, `tenth_board`, `twelth_pc`, `twelth_board`, `school`, `college`, `degree_pc`, `degree_board`, `tenth_cs`, `tenth_yr`, `twelth_cs`, `twelth_yr`, `degree_cs`, `degree_yr`, `degree_insti`, `strengths`, `hobbies`, `courses`, `experience`, `batch_no`, `gender`, `locality`, `address`, `match_percentage`) VALUES
-('1ms11cs121', 'Syed Nouman Akhtar', 'akhtarnouman@gmail.com', 8095112670, '2014-03-14', 'Indian', 'English', 82, 'ICSE', 82, 'ISC', 'SKPS', 'MNPS', 9.13, 'VTU', 'S.S.L.C', 2008, 'P.U.C', 2010, 'B.E', 2015, 'MSRIT', '', 'Cricket', 'Computer Science', '', 11, 'Male', 'Bangalore', 'MSRIT hostel.', 100);
+('1ms11cs121', 'Syed Nouman Akhtar', 'akhtarnouman@gmail.com', 8095112670, '2014-03-14', 'Indian', 'English', 82, 'ICSE', 82, 'ISC', 'SKPS', 'MNPS', 9.13, 'VTU', 'S.S.L.C', 2008, 'P.U.C', 2010, 'B.E', 2015, 'MSRIT', 'hello', 'Cricket', 'Computer Science', '', 11, 'Male', 'Bangalore', 'MSRIT hostel.', 100);
 
 -- --------------------------------------------------------
 
