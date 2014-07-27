@@ -47,7 +47,7 @@ $http_code = curl_getinfo($ch ,CURLINFO_HTTP_CODE);
 curl_close($ch);
  
 print "Response = ".print_r($http_result);
-//header('Location: eligible_students.php?selected_students='.$temp);
+header('Location: eligible_students.php');
 
 	}
 

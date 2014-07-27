@@ -28,7 +28,7 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 	<div align="center">
 	<h1>COMPANY NAME</h1><hr><br/>
 <table id="rounded-corner" summary="Companies Details" >
-    <thead>
+    
 <?php
 if(!empty($_POST['validity']))
 {
@@ -62,7 +62,7 @@ if($number_of_rows==0)
 else
 	{
 	$keys=array_keys($row);
-	print"<div align=\"center\"><h2 class=\"f\"> LIST OF COMPANIES FOR VALIDATION</h2></div>";
+	print"<div align=\"center\"><h2 class=\"f\"> LIST OF COMPANIES FOR VALIDATION</h2><br/></div>";
 	for($i=0;$i<$number_of_columns;$i++)
 			{
 			if($i==0)continue; 
@@ -79,25 +79,19 @@ else
 			$value=htmlspecialchars($values[2*$j+1]);
 			if($j==0)continue; 
 			if($j==1)
-				print "<td><a href=\"employer_details.php?id=".$row['employer_id']."\">".strtoupper(str_replace('_',' ',$value))."</td>";
+				print "<td>".strtoupper(str_replace('_',' ',$value))."</td>";
 			else
 				print "<td>".$value."</td>";
 			}
-		print "<td><form method=\"post\" action=\"\">YES &nbsp <input type=\"radio\" name=\"validity\" value=\"TRUE ".$values[1]."\" required> &nbsp&nbsp NO &nbsp<input type=\"radio\" name=\"validity\" value=\"FALSE".$values[1]."\" required> <input type=\"submit\" style=\"	font-size:12px;margin-top: 5px;padding: 5px 5px;\" value=\"VALIDATE\"></form></td></tr>";
+		print "<td><form method=\"post\" action=\"\">YES<input type=\"radio\" name=\"validity\" value=\"TRUE ".$values[1]."\" required> NO<input type=\"radio\" name=\"validity\" value=\"FALSE".$values[1]."\" required><input type=\"submit\" value=\"VALIDATE\"></form></td></tr>";
 		$row=mysqli_fetch_array($result);
 		}
-	print "</tbody></table> </div></div>";
+	print "</tbody></table> </div>";
 	}
 ?>
 <div align="center">
-<table>
-<tr><td ><form action="validate_employers.php" method="post">
-<input type="submit" value="VALIDATING EMPLOYERS">
-</form></td><td>
-<form action="add_employer.php" method="post">
-<input type="submit" value="ADD EMPLOYER">
-</form><td></tr></table>
+<br/><br/>
 </div>
-
+</div>
 </body>
 </html>

@@ -34,11 +34,8 @@ header('Expires: Mon, 26 Jul 1997 05:00:00 GMT');?>
 <table id="rounded-corner" summary="Companies Details" >
 <thead>
 <?php
-if($_SESSION['c']==0)
-{$employer_id=$_GET['id'];
-$_SESSION['eid']=$employer_id;$_SESSION['c']=1;}
-else
-	$employer_id=$_SESSION['eid'];
+$employer_id=$_GET['id'];
+$_SESSION['eid']=$employer_id;
 $query="select employer_id, role, salary, locality, working_hours, transport_facilities, incentives, accomodation from job where employer_id='".$employer_id."'";
 $query2="select id, role, salary, locality, working_hours, transport_facilities, incentives, accomodation from student_pref where 1";
 $query4="";
